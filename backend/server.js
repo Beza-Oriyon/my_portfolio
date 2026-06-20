@@ -4,6 +4,8 @@ const helemt= require('helmet');
 const morgan = require('morgan');
 require('dotenv').config();
 
+const contactRoutes = require('./routes/contact');
+
 
 const app= express();
 const PORT= process.env.PORT || 5000;
@@ -17,6 +19,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //Routes
+app.use('/api/contact', contactRoutes)
 app.get('/', (req, res) => {
   res.json({ message: 'Portfolio Backend API is running!' });
 });
