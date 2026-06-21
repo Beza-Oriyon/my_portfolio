@@ -12,12 +12,10 @@ const AboutSection = () => {
         <div className="flex justify-center lg:justify-end order-2 lg:order-1">
           <div className="relative">
             <div className="absolute -inset-4 rounded-3xl bg-gradient-accent opacity-20 blur-2xl" />
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-3xl overflow-hidden border border-white/10 shadow-glass-lg">
-              <img
-                src="https://via.placeholder.com/400x400/1c1a22/c9956c?text=Bezawit"
-                alt="Bezawit Lulekal"
-                className="w-full h-full object-cover"
-              />
+            <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-3xl overflow-hidden border border-white/10 shadow-glass-lg bg-gradient-to-br from-accent-wine/40 via-accent-rose/30 to-accent-sage/40 flex items-center justify-center">
+              <span className="font-display text-6xl sm:text-7xl font-semibold text-white/90 select-none">
+                BL
+              </span>
             </div>
             <div className="absolute -bottom-4 -right-4 glass-card px-4 py-2 text-sm font-medium text-accent-rose">
               Backend · DS
