@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { API_URL } from '../config/api';
+import { profile } from '../config/profile';
+import SocialLinks from '../components/SocialLinks';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -55,6 +57,18 @@ const Contact = () => {
         <p className="section-subtitle mx-auto">
           Have a project or opportunity? I&apos;d love to hear from you.
         </p>
+      </div>
+
+      <div className="glass-card p-6 sm:p-8 mb-8 space-y-3 text-sm">
+        <p className="text-gray-800 dark:text-cream/90">
+          <span className="font-medium">Email:</span>{' '}
+          <a href={`mailto:${profile.email}`} className="text-accent-rose hover:underline">{profile.email}</a>
+        </p>
+        <p className="text-gray-800 dark:text-cream/90">
+          <span className="font-medium">Phone:</span>{' '}
+          <a href={`tel:${profile.phone}`} className="text-accent-rose hover:underline">{profile.phone}</a>
+        </p>
+        <SocialLinks />
       </div>
 
       <form onSubmit={handleSubmit} className="glass-card p-6 sm:p-10 space-y-6">

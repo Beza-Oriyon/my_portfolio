@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import AboutSection from '../components/AboutSection';
-import TestimonialSlider from '../components/TestimonialSlider';
+import CertificatesSection from '../components/CertificatesSection';
+import SocialLinks from '../components/SocialLinks';
 
 const techTags = ['Node.js', 'Express', 'React', 'Python', 'PostgreSQL', 'Machine Learning'];
 
@@ -9,7 +10,6 @@ const Home = () => {
     <div>
       {/* Hero */}
       <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden px-5 sm:px-8">
-        {/* Ambient orbs */}
         <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-accent-wine/10 blur-3xl animate-pulse-soft pointer-events-none" />
         <div className="absolute bottom-1/4 -right-32 w-80 h-80 rounded-full bg-accent-rose/10 blur-3xl animate-pulse-soft pointer-events-none" style={{ animationDelay: '2s' }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent-sage/5 blur-3xl pointer-events-none" />
@@ -26,9 +26,13 @@ const Home = () => {
             Backend Engineer &amp; Full Stack Developer
           </p>
 
-          <p className="text-base sm:text-lg text-accent-sage font-medium mb-10 opacity-0 animate-fade-up animate-delay-300">
-            with Data Science expertise
+          <p className="text-base sm:text-lg text-accent-sage font-medium mb-6 opacity-0 animate-fade-up animate-delay-300">
+            Information Systems · Addis Ababa University · Class of 2026
           </p>
+
+          <div className="flex justify-center mb-10 opacity-0 animate-fade-up animate-delay-300">
+            <SocialLinks />
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-14 opacity-0 animate-fade-up animate-delay-400">
             <Link to="/projects" className="btn-primary w-full sm:w-auto">
@@ -49,7 +53,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted dark:text-muted/60">
           <span className="text-[10px] uppercase tracking-[0.25em]">Scroll</span>
           <div className="w-px h-10 bg-gradient-to-b from-accent-rose/60 to-transparent" />
@@ -57,9 +60,8 @@ const Home = () => {
       </section>
 
       <AboutSection />
-      <TestimonialSlider />
+      <CertificatesSection />
 
-      {/* Tech marquee bar */}
       <div className="border-y border-black/[0.06] dark:border-white/[0.06] py-6 overflow-hidden">
         <div className="max-w-6xl mx-auto px-5 text-center">
           <p className="text-xs sm:text-sm text-muted-light dark:text-muted tracking-wide">

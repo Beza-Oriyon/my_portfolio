@@ -1,3 +1,7 @@
+import profilePhoto from '../assets/profile.png';
+import SocialLinks from './SocialLinks';
+import { profile } from '../config/profile';
+
 const AboutSection = () => {
   const highlights = [
     { label: 'Backend', value: 'APIs & Architecture', colorClass: 'text-accent-wine' },
@@ -12,10 +16,12 @@ const AboutSection = () => {
         <div className="flex justify-center lg:justify-end order-2 lg:order-1">
           <div className="relative">
             <div className="absolute -inset-4 rounded-3xl bg-gradient-accent opacity-20 blur-2xl" />
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-3xl overflow-hidden border border-white/10 shadow-glass-lg bg-gradient-to-br from-accent-wine/40 via-accent-rose/30 to-accent-sage/40 flex items-center justify-center">
-              <span className="font-display text-6xl sm:text-7xl font-semibold text-white/90 select-none">
-                BL
-              </span>
+            <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-3xl overflow-hidden border border-white/10 shadow-glass-lg">
+              <img
+                src={profilePhoto}
+                alt={profile.name}
+                className="w-full h-full object-cover object-top"
+              />
             </div>
             <div className="absolute -bottom-4 -right-4 glass-card px-4 py-2 text-sm font-medium text-accent-rose">
               Backend · DS
@@ -28,15 +34,28 @@ const AboutSection = () => {
           <p className="section-label">About Me</p>
           <h2 className="section-title">Building systems that scale &amp; insights that matter</h2>
 
+          <div className="glass-card p-5 mb-6 border-l-4 border-l-accent-sage">
+            <p className="text-xs font-semibold uppercase tracking-wider text-accent-sage mb-1">Education</p>
+            <p className="font-medium text-gray-900 dark:text-cream">
+              {profile.education.degree}
+            </p>
+            <p className="text-sm text-muted-light dark:text-muted">
+              {profile.education.school} · {profile.education.note} ({profile.education.year})
+            </p>
+          </div>
+
           <p className="text-muted-light dark:text-muted leading-relaxed mb-5">
-            I&apos;m a passionate Backend Engineer with strong expertise in Node.js, Express, and building
-            scalable APIs. I also bring solid experience in Data Science and Machine Learning to every project.
+            I&apos;m an Information Systems graduate from Addis Ababa University with strong expertise in
+            Node.js, Express, and building scalable APIs. I also bring solid experience in Data Science
+            and Machine Learning to every project.
           </p>
 
-          <p className="text-muted-light dark:text-muted leading-relaxed mb-10">
+          <p className="text-muted-light dark:text-muted leading-relaxed mb-8">
             My goal is to deliver high-quality, maintainable solutions that combine robust backend systems
             with intelligent, data-driven features.
           </p>
+
+          <SocialLinks className="mb-10" />
 
           <div className="grid sm:grid-cols-3 gap-4">
             {highlights.map(({ label, value, colorClass }) => (

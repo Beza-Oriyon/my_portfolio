@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { profile } from '../config/profile';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -8,13 +9,13 @@ const Footer = () => {
       <div className="divider-gradient mb-0" />
 
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12 sm:py-16">
-        <div className="grid sm:grid-cols-3 gap-10 mb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           <div>
             <p className="font-display text-xl font-semibold text-gray-900 dark:text-cream mb-2">
-              Bezawit Lulekal
+              {profile.name}
             </p>
             <p className="text-sm text-muted-light dark:text-muted leading-relaxed">
-              Backend Engineer &amp; Data Scientist crafting scalable systems and intelligent solutions.
+              {profile.education.degree}, {profile.education.school}. Backend Engineer &amp; Data Scientist.
             </p>
           </div>
 
@@ -26,6 +27,7 @@ const Footer = () => {
                 { to: '/projects', label: 'Projects' },
                 { to: '/skills', label: 'Skills' },
                 { to: '/contact', label: 'Contact' },
+                { to: '/#certificates', label: 'Certificates' },
               ].map(({ to, label }) => (
                 <Link
                   key={to}
@@ -39,12 +41,26 @@ const Footer = () => {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-accent-rose mb-4">Focus Areas</p>
-            <div className="flex flex-wrap gap-2">
-              <span className="tag">Node.js</span>
-              <span className="tag tag-sage">Python</span>
-              <span className="tag">APIs</span>
-              <span className="tag tag-sage">ML</span>
+            <p className="text-xs font-semibold uppercase tracking-widest text-accent-rose mb-4">Contact</p>
+            <div className="flex flex-col gap-2 text-sm">
+              <a href={`mailto:${profile.email}`} className="text-muted-light dark:text-muted hover:text-accent-rose transition-colors">
+                {profile.email}
+              </a>
+              <a href={`tel:${profile.phone}`} className="text-muted-light dark:text-muted hover:text-accent-rose transition-colors">
+                {profile.phone}
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-accent-rose mb-4">Connect</p>
+            <div className="flex flex-col gap-2 text-sm">
+              <a href={profile.github} target="_blank" rel="noopener noreferrer" className="text-muted-light dark:text-muted hover:text-accent-rose transition-colors">
+                GitHub
+              </a>
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-light dark:text-muted hover:text-accent-rose transition-colors">
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>
@@ -52,7 +68,7 @@ const Footer = () => {
         <div className="divider-gradient mb-6" />
 
         <p className="text-center text-sm text-muted-light dark:text-muted">
-          © {year} Bezawit Lulekal · Built with React, Node.js &amp; Express
+          © {year} {profile.name} · Built with React, Node.js &amp; Express
         </p>
       </div>
     </footer>
