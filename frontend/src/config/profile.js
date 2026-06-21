@@ -5,7 +5,7 @@ export const profile = {
   email: 'bezawitlulekal@gmail.com',
   phone: '+251920672615',
   github: 'https://github.com/Beza-Oriyon',
-  linkedin: 'https://www.linkedin.com/public-profile/settings',
+  linkedin: 'https://www.linkedin.com/in/bezawit-lulekal-037966377',
   education: {
     degree: 'BSc in Information Systems',
     school: 'Addis Ababa University',
@@ -22,7 +22,7 @@ export const socialLinks = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/public-profile/settings',
+    href: profile.linkedin,
     icon: 'linkedin',
   },
   {
